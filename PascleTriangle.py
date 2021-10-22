@@ -7,14 +7,15 @@
 #################################################
 
 import os
+import sys
 
 
-def drawPascalTriangle(n):
+def drawPascalTriangle(n=5):
 
 	os.system('cls' if os.name == 'nt' else 'clear')
 	t  = []
 	t2 = []
-
+	print("Print the first {} lines of the Pascale Triangle".format(n))
 	print(1)
 	for i in range(1, n+1):
 		print(1, end=' ')
@@ -29,4 +30,12 @@ def drawPascalTriangle(n):
 
 
 if __name__ == "__main__":
-	drawPascalTriangle(10)
+	if len(sys.argv) == 2:	#file itself and number
+		drawPascalTriangle(int(str(sys.argv[1])))
+	else:
+		drawPascalTriangle()
+
+
+
+
+
